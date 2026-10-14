@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JavaScript Product Inventory & Analytics Dashboard | Assignments &amp; Capstone</title>
+  <meta name="description" content="Six JavaScript assignments and an interactive product inventory dashboard capstone." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top"><span class="brand-mark">JS</span> Product Inventory & Analytics Dashboard</a>
+      <nav class="nav-links">
+        <a href="#assignments">Assignments</a>
+        <a href="#capstone">Capstone</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="pill"><span class="dot">&#9889;</span> <span id="studentLine">JavaScript Internship</span></span>
+          <h1>Learn it by <span class="accent">running it.</span></h1>
+          <p class="lead">Six hands-on assignments and one capstone project. Every snippet here is real JavaScript: edit the code, hit run, and watch the console answer back.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#assignments">Start the assignments</a>
+            <a class="btn btn-ghost" href="#capstone">Jump to the capstone</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-card chip-float cf-1">const total = 975;</div>
+          <div class="float-card hero-console">
+            <div class="hc-bar"><i></i><i></i><i></i><span>console</span></div>
+            <div class="hc-body" id="heroType"></div>
+          </div>
+          <div class="float-card chip-float cf-2">products.map()</div>
+          <div class="float-card chip-float cf-3">&#10003; passed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assignments -->
+    <section class="block" id="assignments">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Part 1</span>
+          <h2>The six assignments</h2>
+          <p>Pick one on the left. The code is editable, so try changing a value and run it again. The panel on the right shows the output your trainer expects, and we'll tell you when yours matches.</p>
+        </div>
+
+        <div class="lab reveal">
+          <aside class="side">
+            <div class="progress">
+              <div class="progress-top"><span>Your progress</span><span id="progressText">0 / 6</span></div>
+              <div class="bar"><i id="progressBar"></i></div>
+            </div>
+            <div class="asg-list" id="asgList"></div>
+          </aside>
+
+          <article class="work" id="work">
+            <div class="work-head">
+              <div>
+                <div class="kicker" id="asgKicker">Assignment 1</div>
+                <h3 id="asgTitle">Loading</h3>
+              </div>
+              <span class="badge idle" id="matchChip">Not run yet</span>
+            </div>
+            <div class="task" id="asgTask"></div>
+            <div class="inputs" id="asgInputs"></div>
+
+            <div class="editor-wrap">
+              <div class="editor-bar">
+                <h4>Code (editable)</h4>
+                <div class="editor-actions">
+                  <button class="btn btn-soft btn-sm" id="copyBtn" type="button">Copy</button>
+                  <button class="btn btn-soft btn-sm" id="resetBtn" type="button">Reset</button>
+                </div>
+              </div>
+              <div class="editor" id="editor">
+                <pre aria-hidden="true"><code id="hl"></code></pre>
+                <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Assignment code"></textarea>
+              </div>
+            </div>
+
+            <div class="run-row">
+              <button class="btn btn-primary" id="runBtn" type="button">&#9654; Run code</button>
+              <span class="hint" id="runHint">Tip: Ctrl + Enter runs it too.</span>
+            </div>
+
+            <div class="panes">
+              <div class="pane">
+                <div class="pane-head"><span>Your output</span></div>
+                <div class="pane-body" id="out"></div>
+              </div>
+              <div class="pane">
+                <div class="pane-head"><span>Expected output</span></div>
+                <div class="pane-body exp" id="expected"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capstone -->
+    <section class="block" id="capstone">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Part 2 &middot; Capstone</span>
+          <h2>Product Inventory &amp; Analytics Dashboard</h2>
+          <p>Everything from the six assignments in one place: input handling, if/else and switch, loops with break and continue, regular and arrow functions, and forEach, filter and map.</p>
+        </div>
+
+        <div class="cap-grid reveal">
+          <div class="stack">
+            <div class="card">
+              <h4>Add a product</h4>
+              <p class="sub">Type it in, or use the prompt() box like the assignment says.</p>
+              <form class="form" id="addForm" autocomplete="off">
+                <div class="field"><label for="pName">Product name</label><input id="pName" type="text" placeholder="Monitor" /></div>
+                <div class="field"><label for="pPrice">Price ($)</label><input id="pPrice" type="text" inputmode="decimal" placeholder="150" /></div>
+                <div class="err" id="formErr" role="alert"></div>
+                <div class="btn-row">
+                  <button class="btn btn-primary" type="submit">Add product</button>
+                  <button class="btn btn-soft" type="button" id="promptBtn">Use prompt()</button>
+                </div>
+              </form>
+              <div class="divider"></div>
+              <div class="btn-row">
+                <button class="btn btn-ghost btn-sm" type="button" id="sampleBtn">Try the sample (Monitor)</button>
+                <button class="btn btn-ghost btn-sm" type="button" id="messyBtn">Import messy data</button>
+                <button class="btn btn-ghost btn-sm" type="button" id="resetInvBtn">Reset</button>
+              </div>
+              <div id="importReport"></div>
+            </div>
+
+            <div class="card">
+              <h4>Pricing controls</h4>
+              <p class="sub">Try a tax rate or a discount on the whole inventory.</p>
+              <div class="range"><div class="range-top"><span>Tax</span><b id="taxVal">0%</b></div><input type="range" id="tax" min="0" max="30" value="0" /></div>
+              <div class="range"><div class="range-top"><span>Discount</span><b id="discVal">0%</b></div><input type="range" id="disc" min="0" max="50" value="0" /></div>
+              <div class="field"><label for="limit">"Affordable" means under ($)</label><input id="limit" type="number" min="1" value="200" /></div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="stats">
+              <div class="stat"><div class="k">Products</div><div class="v" id="sCount">0</div></div>
+              <div class="stat"><div class="k">Inventory value</div><div class="v" id="sTotal">$0</div></div>
+              <div class="stat"><div class="k">Average price</div><div class="v" id="sAvg">$0</div></div>
+              <div class="stat"><div class="k">After tax &amp; discount</div><div class="v" id="sFinal">$0</div></div>
+            </div>
+
+            <div class="card table-card">
+              <div class="table-head">
+                <div><h4>Inventory roster</h4></div>
+                <div class="chips" id="filters"></div>
+              </div>
+              <table>
+                <thead><tr><th>Product</th><th>Price</th><th>Category</th><th></th></tr></thead>
+                <tbody id="rows"></tbody>
+              </table>
+              <div class="empty-state" id="emptyState" hidden>Nothing here yet. Add your first product on the left.</div>
+            </div>
+
+            <div class="pane report">
+              <div class="pane-head"><span>Console output</span><button class="btn btn-soft btn-sm" id="replayBtn" type="button">Replay</button></div>
+              <div class="pane-body" id="report"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-name">Submitted by <b id="footName">Mayank Aneja</b></div>
+      <div class="foot-sub">Made with plain HTML, CSS and JavaScript &middot; Tip: press F12 to see the real console output</div>
+    </div>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/snippets.js"></script>
+  <script src="js/inventory-core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
